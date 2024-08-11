@@ -15,8 +15,6 @@ export default function Favourites() {
         queryFn: () => getFavourites(),
     })
 
-    console.log(favourites)
-
     return (
         <div>
             {favourites?.length === 0 ? (

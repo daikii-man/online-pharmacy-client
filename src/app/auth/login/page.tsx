@@ -54,7 +54,6 @@ export default function LoginPage() {
             if (response?.status === 200) {
                 router.push('/')
                 queryClient.invalidateQueries({ queryKey: ['user'] })
-                Cookies.set('logged', 'true', { expires: 365 })
             } else if (response?.status === 404) {
                 setState({ ...state, loading: false })
                 toast({
