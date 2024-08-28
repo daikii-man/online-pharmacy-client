@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from "axios";
 
 const axiosOptions: AxiosRequestConfig = {
-    baseURL: 'https://online-pharmacy-server.onrender.com',
+    baseURL: 'http://localhost:5000',
     timeout: 10000,
     withCredentials: true,
     headers: {
