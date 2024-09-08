@@ -4,7 +4,6 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { NextUIProviderComponent } from "@/providers/nextUIProvider";
 import { Toaster } from "@/components/toastComponent/toastComponent";
 import ContextsProvider from "@/providers/contextsProvider";
-import { axiosInstance } from "@/configs/axios.config";
 import { PrimeReactProvider } from 'primereact/api';
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
@@ -14,24 +13,18 @@ import Provider from "./provider";
 import React from "react";
 import "./globals.css";
 
-const LexendExa = Lexend_Exa({ subsets: ['latin'] })
-const queryClient = new QueryClient()
+const LexendExa = Lexend_Exa({ subsets: ['latin'] });
+const queryClient = new QueryClient();
 
 export default function RootLayout({ children }: childrenProps) {
-  React.useEffect(() => {
-    const requetToAPI = async () => {
-      await axiosInstance.get('/')
-    }
-
-    const id = setInterval(requetToAPI, 1000)
-
-    return () => { clearInterval(id) }
-  })
-  
   return (
     <html lang="en" className={LexendExa.className}>
-      <body
-      >
+      <head>
+        <title>Online Pharmacy - Search for medicines and low prices for medicines</title>
+        <meta name="description" content="Поиск лекарств и низкие цены на медикаменты" />
+        <link rel="shortcut icon" href="/medicines.svg" />
+      </head>
+      <body>
         <QueryClientProvider client={queryClient}>
           <ContextsProvider>
             <Header />

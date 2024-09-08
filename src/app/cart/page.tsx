@@ -84,7 +84,7 @@ export default function Cart() {
     }
 
     return (
-        <div className="w-full justify-center py-24  relative items-center" >
+        <div className="w-full justify-center py-24  relative items-center mb-44" >
             {cart?.length === 0 ? (
                 <div className='text-center justify-center'>
                     <Image className='w-[500px] mx-auto my-4' src={EmptyImage} alt='Empty Image' />
